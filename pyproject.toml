@@ -3,7 +3,7 @@ name = "mandrik-dev"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "Thiago Mandrik",email = "thiagomandrik@gmail.com"}
+    {name = "Thiago     ",email = "thiagomandrik@gmail.com"}
 ]
 readme = "README.md"
 requires-python = "<4.0,>=3.12"
@@ -24,7 +24,7 @@ ruff = "^0.11.12"
 
 [tool.ruff]
 line-length = 79
-extend-exclude = ['migrations']
+extend-exclude = ['migrations', '__init__.py']
 
 [tool.ruff.lint]
 preview = true
@@ -42,8 +42,8 @@ addopts = '-p no:warnings'
 lint = 'ruff check'
 pre_format = 'ruff check --fix'
 format = 'ruff format'
-run = 'fastapi dev fast_zero/app.py'
+run = 'fastapi dev app/app.py'
 pre_test = 'task lint'
-test = 'pytest -s -x --cov=fast_zero -vv'
+test = 'pytest -s -x --cov=app -vv'
 post_test = 'coverage html'
 
